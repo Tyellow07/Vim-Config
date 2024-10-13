@@ -1,9 +1,8 @@
 
 call plug#begin('~/.vim/plugged')
-Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-dispatch'
 Plug 'arcticicestudio/nord-vim'
-Plug 'vim-airline/vim-airline-theme'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 call plug#end()
 

@@ -29,14 +29,26 @@ nnoremap <leader>v :edit ~/.vimrc<CR>
 nnoremap <leader>f :set hlsearch!<CR>
 nnoremap <leader>d :AbortDispatch<CR>
 noremap <D-f> <nop>
-inoremap { {}<Left>
-inoremap <CR> <CR><Esc>O
-inoremap ( ()<Esc>ha
-inoremap [ []<Esc>ha
-inoremap " ""<Esc>ha
-inoremap ' ''<Esc>ha
-inoremap ` ``<Esc>ha
+inoremap ( ()<ESC>i
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
+inoremap { {}<ESC>i
+inoremap [ []<ESC>i
+inoremap <expr> <CR> InsertMapForEnter()
+function! InsertMapForEnter()
+    if pumvisible()
+        return "\<C-y>"
+    elseif strcharpart(getline('.'),getpos('.')[2]-1,1) == '}'
+        return "\<CR>\<Esc>O"
+    elseif strcharpart(getline('.'),getpos('.')[2]-1,2) == '</'
+        return "\<CR>\<Esc>O"
+    else
+        return "\<CR>"
+    endif
+endfunction
 
+set timeout
+set timeoutlen=500
 set noshowmode
 syntax enable
 set mousehide
@@ -63,6 +75,7 @@ set showcmd
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set expandtab
 set smartindent
 set autoindent
 set cindent

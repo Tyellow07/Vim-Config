@@ -29,6 +29,13 @@ nnoremap <leader>v :edit ~/.vimrc<CR>
 nnoremap <leader>f :set hlsearch!<CR>
 nnoremap <leader>d :AbortDispatch<CR>
 noremap <D-f> <nop>
+inoremap { {}<Left>
+inoremap <CR> <CR><Esc>O
+inoremap ( ()<Esc>ha
+inoremap [ []<Esc>ha
+inoremap " ""<Esc>ha
+inoremap ' ''<Esc>ha
+inoremap ` ``<Esc>ha
 
 set noshowmode
 syntax enable
@@ -63,9 +70,6 @@ set laststatus=2
 set ruler
 set langmenu=en_US.UTF-8
 language messages en_US.UTF-8
-inoremap ( ()<LEFT>
-inoremap [ []<LEFT>
-inoremap { {}<LEFT>
 set guioptions=
 set autoread
 autocmd CursorHold * checktime

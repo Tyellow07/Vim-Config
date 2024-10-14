@@ -6,6 +6,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 call plug#end()
 
+
 set guifont=JetBrains\ Mono\ Medium:h19.5
 colorscheme nord
 let g:airline_theme='nord'
@@ -18,7 +19,9 @@ let g:airline_section_y = '%p%%'
 let g:airline_section_z = '%l:%c'
 let g:airline_extensions = []
 
-nmap <leader>/ :w<CR>:Dispatch g++-14 -std=c++17 -o a.out % && ./a.out && rm ./a.out<CR>
+
+nnoremap <leader>f :set hlsearch!<CR>
+nmap <leader>b :w<CR>:Dispatch g++-14 -std=c++17 -o %<.out % && ./%<.out && rm ./%<.out<CR>
 nnoremap <F9> :r /Users/tyson/template.cpp<CR>
 inoremap jk <esc>
 vmap jk <esc>
@@ -46,6 +49,7 @@ function! InsertMapForEnter()
         return "\<CR>"
     endif
 endfunction
+
 
 set timeout
 set timeoutlen=500
@@ -86,8 +90,5 @@ language messages en_US.UTF-8
 set guioptions=
 set autoread
 autocmd CursorHold * checktime
-nnoremap <leader>f :set hlsearch!<CR>
 set title
 set titlestring=I\ am\ just\ a\ fish
-
-

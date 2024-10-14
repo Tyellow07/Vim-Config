@@ -1,4 +1,4 @@
-
+" Tyellow vimrc
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-dispatch'
 Plug 'arcticicestudio/nord-vim'
@@ -91,4 +91,4 @@ set guioptions=
 set autoread
 autocmd CursorHold * checktime
 set title
-set titlestring=I\ am\ just\ a\ fish
+set titlestring=I'm\ just\ a\ fish

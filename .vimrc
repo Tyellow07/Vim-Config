@@ -79,7 +79,7 @@ autocmd CursorHold * checktime
 set title
 set titlestring=I'm\ just\ a\ fish
 let g:mkdp_brower = 'chromium'
-set nobackup       " no backup files
-set noswapfile     " no swap files
-set nowritebackup  " only in case you don't want a backup file while editing
-set noundofile     " no undo files
+set nobackup
+set noswapfile
+set nowritebackup
+set noundofile

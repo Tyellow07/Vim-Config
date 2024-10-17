@@ -77,9 +77,9 @@ set guioptions=
 set autoread
 autocmd CursorHold * checktime
 set title
-set titlestring=I'm\ just\ a\ fish
+set titlestring=Tyellow\ vim
 let g:mkdp_brower = 'chromium'
 set nobackup
 set noswapfile
 set nowritebackup
-set noundofile
+set noundofice

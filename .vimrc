@@ -4,6 +4,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'chun-yang/auto-pairs'
 call plug#end()
 
 
@@ -32,25 +34,9 @@ nnoremap <leader>v :edit ~/.vimrc<CR>
 nnoremap <leader>f :set hlsearch!<CR>
 nnoremap <leader>d :AbortDispatch<CR>
 noremap <D-f> <nop>
-inoremap ( ()<ESC>i
-inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
-inoremap { {}<ESC>i
-inoremap [ []<ESC>i
-inoremap <expr> <CR> InsertMapForEnter()
-function! InsertMapForEnter()
-    if pumvisible()
-        return "\<C-y>"
-    elseif strcharpart(getline('.'),getpos('.')[2]-1,1) == '}'
-        return "\<CR>\<Esc>O"
-    elseif strcharpart(getline('.'),getpos('.')[2]-1,2) == '</'
-        return "\<CR>\<Esc>O"
-    else
-        return "\<CR>"
-    endif
-endfunction
 
 
+set nowrap
 set timeout
 set timeoutlen=500
 set noshowmode
@@ -92,3 +78,8 @@ set autoread
 autocmd CursorHold * checktime
 set title
 set titlestring=I'm\ just\ a\ fish
+let g:mkdp_brower = 'chromium'
+set nobackup       " no backup files
+set noswapfile     " no swap files
+set nowritebackup  " only in case you don't want a backup file while editing
+set noundofile     " no undo files

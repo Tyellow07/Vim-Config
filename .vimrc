@@ -4,12 +4,11 @@ Plug 'tpope/vim-dispatch'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'chun-yang/auto-pairs'
 call plug#end()
 
 
-set guifont=JetBrains\ Mono\ Medium:h19.5
+set guifont=JetBrains\ Mono\ Regular:h18.5
 colorscheme nord
 let g:airline_theme='nord'
 let g:airline_powerline_fonts=1
@@ -78,8 +77,6 @@ set autoread
 autocmd CursorHold * checktime
 set title
 set titlestring=Tyellow\ vim
-let g:mkdp_brower = 'chromium'
 set nobackup
 set noswapfile
 set nowritebackup
-set noundofice

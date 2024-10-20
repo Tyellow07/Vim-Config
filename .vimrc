@@ -4,11 +4,13 @@ Plug 'tpope/vim-dispatch'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
-Plug 'chun-yang/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 
-set guifont=JetBrains\ Mono\ Regular:h18.5
+set guifont=JetBrains\ Mono:h18.5
+highlight Comment cterm=italic
+
 colorscheme nord
 let g:airline_theme='nord'
 let g:airline_powerline_fonts=1
@@ -33,7 +35,7 @@ nnoremap <leader>v :edit ~/.vimrc<CR>
 nnoremap <leader>f :set hlsearch!<CR>
 nnoremap <leader>d :AbortDispatch<CR>
 noremap <D-f> <nop>
-
+nnoremap <leader>lg :!lazygit<CR>
 
 set nowrap
 set timeout
@@ -80,3 +82,5 @@ set titlestring=Tyellow\ vim
 set nobackup
 set noswapfile
 set nowritebackup
+let g:AutoPairsMapBS = 0
+

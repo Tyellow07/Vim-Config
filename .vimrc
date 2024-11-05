@@ -1,8 +1,9 @@
 " Tyellow vimrc
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-dispatch'
-Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'vim-airline/vim-airline-themes'
+Plug '907th/vim-auto-save'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
@@ -24,7 +25,7 @@ let g:airline_extensions = []
 
 
 nnoremap <leader>f :set hlsearch!<CR>
-nmap <leader>b :w<CR>:Dispatch g++-14 -std=c++17 -o %<.out % && ./%<.out && rm ./%<.out<CR>
+nmap <leader>b :w<CR>:Dispatch g++-14 -std=c++17 -O3 -o %<.out % && ./%<.out && rm ./%<.out<CR>
 nnoremap <F9> :r /Users/tyson/template.cpp<CR>
 inoremap jk <esc>
 vmap jk <esc>
@@ -83,4 +84,12 @@ set nobackup
 set noswapfile
 set nowritebackup
 let g:AutoPairsMapBS = 0
-
+let g:nord_cursor_line_number_background = 1
+let g:nord_bold = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_bold_vertical_split_line = 1
+highlight clear SpellBad
+highlight clear Error
+highlight clear ALEErrorSign
+let g:auto_save = 1
